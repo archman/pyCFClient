@@ -1,5 +1,6 @@
-python-cfclient (2.0.0-1) unstable; urgency=low
+python-cfclient (2.0.0-1) UNRELEASED; urgency=low
 
-  * Initial release (Closes: #nnnn)  <nnnn is the bug number of your ITP>
+  * Initial release with source from Github:
+    https://github.com/ChannelFinder/pyCFClient/archive/89f5639335aa7ebcb910289e1f74089857180d62.tar.gz
 
- -- unknown <devuser@develop-vmctrl0>  Fri, 29 Apr 2016 08:56:30 -0700
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Fri, 29 Apr 2016 08:56:30 -0700
