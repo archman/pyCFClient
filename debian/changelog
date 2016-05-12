@@ -1,3 +1,9 @@
+python-cfclient (2.0.0-3) unstable; urgency=medium
+
+  * Patch hard-coded base URL with class variable.
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Thu, 12 May 2016 14:05:02 -0700
+
 python-cfclient (2.0.0-2) unstable; urgency=medium
 
   * Patch hard-coded base URL withwq construction parameter.

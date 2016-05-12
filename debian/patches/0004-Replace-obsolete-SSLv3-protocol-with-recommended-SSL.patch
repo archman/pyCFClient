@@ -7,7 +7,7 @@ Subject: Replace obsolete SSLv3 protocol with recommended SSLv23.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/channelfinder/ChannelFinderClient.py b/channelfinder/ChannelFinderClient.py
-index 740bf14..672fa09 100644
+index 8d0d713..03f7b3a 100644
 --- a/channelfinder/ChannelFinderClient.py
 +++ b/channelfinder/ChannelFinderClient.py
 @@ -614,6 +614,6 @@ class Ssl3HttpAdapter(HTTPAdapter):

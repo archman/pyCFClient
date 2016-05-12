@@ -7,7 +7,7 @@ Subject: Use the version of urllib3 included with requestions library.
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/channelfinder/ChannelFinderClient.py b/channelfinder/ChannelFinderClient.py
-index 6e44b6a..740bf14 100644
+index e21613b..8d0d713 100644
 --- a/channelfinder/ChannelFinderClient.py
 +++ b/channelfinder/ChannelFinderClient.py
 @@ -11,7 +11,7 @@ import re
