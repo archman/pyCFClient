@@ -1,3 +1,11 @@
+python-cfclient (2.0.0-2) unstable; urgency=medium
+
+  * Patch hard-coded base URL withwq construction parameter.
+  * Patch to use version of urllib3 included with Requests.
+  * Patch to replace ssl.PROTOCOL_vSSLv3 with ssl.PROTOCOL_vSSLv23.
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Thu, 12 May 2016 10:16:47 -0700
+
 python-cfclient (2.0.0-1) unstable; urgency=low
 
   * Initial release with source from Github:

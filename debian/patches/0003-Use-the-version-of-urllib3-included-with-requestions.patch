@@ -1,0 +1,21 @@
+From: Dylan Maxwell <maxwelld@frib.msu.edu>
+Date: Thu, 12 May 2016 10:13:31 -0700
+Subject: Use the version of urllib3 included with requestions library.
+
+---
+ channelfinder/ChannelFinderClient.py | 2 +-
+ 1 file changed, 1 insertion(+), 1 deletion(-)
+
+diff --git a/channelfinder/ChannelFinderClient.py b/channelfinder/ChannelFinderClient.py
+index 6e44b6a..740bf14 100644
+--- a/channelfinder/ChannelFinderClient.py
++++ b/channelfinder/ChannelFinderClient.py
+@@ -11,7 +11,7 @@ import re
+ import requests
+ import ssl
+ from requests.adapters import HTTPAdapter
+-from urllib3 import PoolManager
++from requests.packages.urllib3.poolmanager import PoolManager
+ from requests import auth
+ from copy import copy
+ from _conf import _conf
