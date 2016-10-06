@@ -1,3 +1,9 @@
+python-cfclient (2.0.0-4) unstable; urgency=medium
+
+  * Testing Jenkins build system.
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Thu, 6 Oct 2016 15:03:02 -0700
+
 python-cfclient (2.0.0-3) unstable; urgency=medium
 
   * Patch hard-coded base URL with class variable.
