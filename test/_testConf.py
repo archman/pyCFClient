@@ -15,19 +15,19 @@ password=MyPassword
 def __loadConfig():
     import os.path
     import ConfigParser
-    dflt={'BaseURL':'https://localhost:9191/ChannelFinder',
-          'username' : 'cf-update',
-          'password' : '1234',
+    dflt={'BaseURL':'https://localhost:8181/ChannelFinder',
+          'username' : 'devuser',
+          'password' : 'E=mc^2',
           'owner' : 'cf-update',
           'channelOwner' : 'cf-channels',
-          'channelUsername' : 'channel',
-          'channelPassword' : '1234',          
+          'channelUsername' : 'devuser',
+          'channelPassword' : 'E=mc^2',          
           'propOwner' : 'cf-properties',
-          'propUsername' : 'property',
-          'propPassword' : '1234',
+          'propUsername' : 'devuser',
+          'propPassword' : 'E=mc^2',
           'tagOwner' : 'cf-tags',
-          'tagUsername' : 'tag',
-          'tagPassword' : '1234'
+          'tagUsername' : 'devuser',
+          'tagPassword' : 'E=mc^2'
         }
     cf=ConfigParser.SafeConfigParser(defaults=dflt)
     cf.read([
