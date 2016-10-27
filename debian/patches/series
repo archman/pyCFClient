@@ -1,4 +1,1 @@
 0001-Remove-test-directory-from-package-installation.patch
-0002-Replace-static-URL-with-class-variable.patch
-0003-Use-the-version-of-urllib3-included-with-requestions.patch
-0004-Replace-obsolete-SSLv3-protocol-with-recommended-SSL.patch

@@ -1,3 +1,11 @@
+python-cfclient (3.0.0~frib1-1) unstable; urgency=medium
+
+  * Improved Python docstrings
+  * Fix broken parts of API
+  * Update to commit 85d2bad
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Wed, 26 Oct 2016 16:07:08 -0400
+
 python-cfclient (2.0.0-4) unstable; urgency=medium
 
   * Testing Jenkins build system.
