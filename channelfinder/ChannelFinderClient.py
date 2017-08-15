@@ -88,7 +88,6 @@ class ChannelFinderClient(object):
             raise RuntimeError("Unknown resource type.")
         return ret
 
-
     def __getDefaultConfig(self, arg, value):
         if value == None and _conf.has_option('DEFAULT', arg):
             return _conf.get('DEFAULT', arg)
@@ -663,7 +662,6 @@ class ChannelFinderClient(object):
                           auth=self.__auth).raise_for_status()
         else:
             raise Exception, ' unknown keys'
-
 
 
 class Ssl3HttpAdapter(HTTPAdapter):
