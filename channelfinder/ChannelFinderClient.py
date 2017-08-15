@@ -54,6 +54,39 @@ class ChannelFinderClient(object):
  
         except:
             raise Exception('Failed to create client to ' + self.__baseURL)
+    
+    @property
+    def url(self):
+        """Base URL for channel finder service.
+        """
+        return self.__baseURL
+
+    @url.setter
+    def url(self, u):
+        self.__baseURL = u
+
+    def get_resource(self, itype='channel'):
+        """Get URL of resources.
+
+        Parameters
+        ----------
+        itype : str
+            Resource type, could be `channel` (default), `tag`, `property`.
+
+        Returns
+        -------
+        ret : str
+            Full URL of resource.
+        """
+        if itype == 'channel':
+            ret = self.url + self.__channelsResource
+        elif itype == 'tag':
+            ret = self.url + self.__tagsResource
+        elif itype == 'property':
+            ret = self.url + self.__propertiesResource
+        else:
+            raise RuntimeError("Unknown resource type.")
+        return ret
 
     def __getDefaultConfig(self, arg, value):
         if value == None and _conf.has_option('DEFAULT', arg):
