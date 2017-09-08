@@ -1,3 +1,11 @@
+python-cfclient (3.0.1-1) unstable; urgency=medium
+
+  * Add size and ifrom keyword arguments for 'find'
+  * Fix typo and documentation
+  * Add methods to handle url properties.
+
+ -- Tong Zhang <zhangt@frib.msu.edu>  Fri, 08 Sep 2017 14:49:01 -0400
+
 python-cfclient (3.0.0~frib1-1) unstable; urgency=medium
 
   * Improved Python docstrings

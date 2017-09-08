@@ -1,0 +1,58 @@
+From b94853198dfb8553d3d1f8b26ed9bf5cbfb9aef6 Mon Sep 17 00:00:00 2001
+From: Tong Zhang <zhangt@frib.msu.edu>
+Date: Tue, 15 Aug 2017 17:08:10 -0400
+Subject: [PATCH 2/3] Update version to 3.0.1.
+
+---
+ channelfinder/ChannelFinderClient.py | 2 --
+ channelfinder/__init__.py            | 4 +++-
+ setup.py                             | 2 +-
+ 3 files changed, 4 insertions(+), 4 deletions(-)
+
+diff --git a/channelfinder/ChannelFinderClient.py b/channelfinder/ChannelFinderClient.py
+index e49143c..709c3c9 100644
+--- a/channelfinder/ChannelFinderClient.py
++++ b/channelfinder/ChannelFinderClient.py
+@@ -88,7 +88,6 @@ class ChannelFinderClient(object):
+             raise RuntimeError("Unknown resource type.")
+         return ret
+ 
+-
+     def __getDefaultConfig(self, arg, value):
+         if value == None and _conf.has_option('DEFAULT', arg):
+             return _conf.get('DEFAULT', arg)
+@@ -665,7 +664,6 @@ class ChannelFinderClient(object):
+             raise Exception, ' unknown keys'
+ 
+ 
+-
+ class Ssl3HttpAdapter(HTTPAdapter):
+     """"Transport adapter" that allows us to use SSLv3."""
+ 
+diff --git a/channelfinder/__init__.py b/channelfinder/__init__.py
+index d8912b5..7073b3f 100644
+--- a/channelfinder/__init__.py
++++ b/channelfinder/__init__.py
+@@ -1,2 +1,4 @@
+ from CFDataTypes import *
+-from ChannelFinderClient import *
+\ No newline at end of file
++from ChannelFinderClient import *
++
++__version__ = '3.0.1'
+diff --git a/setup.py b/setup.py
+index 10d16f2..dafca10 100644
+--- a/setup.py
++++ b/setup.py
+@@ -8,7 +8,7 @@ from setuptools import setup
+ 
+ setup(
+     name='channelfinder',
+-    version='3.0.0',
++    version='3.0.1',
+     description='Python ChannelFinder Client Lib',
+     author='Kunal Shroff',
+     author_email='shroffk@bnl.gov',
+-- 
+2.7.4
+

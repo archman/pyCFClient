@@ -1,1 +1,3 @@
-0001-Remove-test-directory-from-package-installation.patch
+0001-Add-method-to-get-url-of-tag-property-and-channel.patch
+0002-Update-version-to-3.0.1.patch
+0003-Exclude-test-directory-from-package.patch

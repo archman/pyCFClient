@@ -1,13 +1,14 @@
-From: Dylan Maxwell <maxwelld@frib.msu.edu>
-Date: Fri, 29 Apr 2016 12:30:09 -0700
-Subject: Remove test directory from package installation.
+From a080604aec1bd7df83513fa482b10170ec56fe6e Mon Sep 17 00:00:00 2001
+From: Tong Zhang <zhangt@frib.msu.edu>
+Date: Fri, 8 Sep 2017 14:44:51 -0400
+Subject: [PATCH 3/3] Exclude test directory from package.
 
 ---
  setup.py | 2 +-
  1 file changed, 1 insertion(+), 1 deletion(-)
 
 diff --git a/setup.py b/setup.py
-index b5f92f9..e485854 100644
+index dafca10..679c391 100644
 --- a/setup.py
 +++ b/setup.py
 @@ -14,7 +14,7 @@ setup(
@@ -19,3 +20,6 @@ index b5f92f9..e485854 100644
        long_description="""\
        Python ChannelFinder Client Lib
        """,
+-- 
+2.7.4
+

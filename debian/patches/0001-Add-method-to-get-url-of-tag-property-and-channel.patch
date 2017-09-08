@@ -1,0 +1,57 @@
+From 1fc9bf23bcf2afd0cd5d71a74ed3a6fc5f18c91c Mon Sep 17 00:00:00 2001
+From: Tong Zhang <zhangt@frib.msu.edu>
+Date: Tue, 15 Aug 2017 17:07:14 -0400
+Subject: [PATCH 1/3] Add method to get url of tag, property and channel.
+
+---
+ channelfinder/ChannelFinderClient.py | 34 ++++++++++++++++++++++++++++++++++
+ 1 file changed, 34 insertions(+)
+
+diff --git a/channelfinder/ChannelFinderClient.py b/channelfinder/ChannelFinderClient.py
+index 6f40b89..e49143c 100644
+--- a/channelfinder/ChannelFinderClient.py
++++ b/channelfinder/ChannelFinderClient.py
+@@ -54,6 +54,40 @@ class ChannelFinderClient(object):
+  
+         except:
+             raise Exception, 'Failed to create client to ' + self.__baseURL
++    
++    @property
++    def url(self):
++        """Base URL for channel finder service.
++        """
++        return self.__baseURL
++
++    @url.setter
++    def url(self, u):
++        self.__baseURL = u
++
++    def get_resource(self, itype='channel'):
++        """Get URL of resources.
++
++        Parameters
++        ----------
++        itype : str
++            Resource type, could be `channel` (default), `tag`, `property`.
++
++        Returns
++        -------
++        ret : str
++            Full URL of resource.
++        """
++        if itype == 'channel':
++            ret = self.url + self.__channelsResource
++        elif itype == 'tag':
++            ret = self.url + self.__tagsResource
++        elif itype == 'property':
++            ret = self.url + self.__propertiesResource
++        else:
++            raise RuntimeError("Unknown resource type.")
++        return ret
++
+ 
+     def __getDefaultConfig(self, arg, value):
+         if value == None and _conf.has_option('DEFAULT', arg):
+-- 
+2.7.4
+
