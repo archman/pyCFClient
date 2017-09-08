@@ -16,18 +16,18 @@ def __loadConfig():
     import os.path
     import ConfigParser
     dflt={'BaseURL':'https://localhost:8181/ChannelFinder',
-          'username' : 'devuser',
-          'password' : 'E=mc^2',
+          'username' : 'cf-update',
+          'password' : '1234',
           'owner' : 'cf-update',
           'channelOwner' : 'cf-channels',
-          'channelUsername' : 'devuser',
-          'channelPassword' : 'E=mc^2',          
+          'channelUsername' : 'channel',
+          'channelPassword' : '1234',          
           'propOwner' : 'cf-properties',
-          'propUsername' : 'devuser',
-          'propPassword' : 'E=mc^2',
+          'propUsername' : 'property',
+          'propPassword' : '1234',
           'tagOwner' : 'cf-tags',
-          'tagUsername' : 'devuser',
-          'tagPassword' : 'E=mc^2'
+          'tagUsername' : 'tag',
+          'tagPassword' : '1234'
         }
     cf=ConfigParser.SafeConfigParser(defaults=dflt)
     cf.read([
@@ -36,4 +36,5 @@ def __loadConfig():
         'channelfinderapi.conf'
     ])
     return cf
+
 _testConf=__loadConfig()
