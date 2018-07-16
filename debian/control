@@ -2,10 +2,10 @@ Source: python-cfclient
 Section: python
 Priority: optional
 Maintainer: Dylan Maxwell <maxwelld@frib.msu.edu>
-Build-Depends: debhelper (>= 9), dh-python,
- python-all, python-setuptools
-Standards-Version: 3.9.5
+Build-Depends: debhelper (>= 9),dh-python,python-all,python3-all,python-setuptools,python3-setuptools
+Standards-Version: 3.9.6
 X-Python-Version: >= 2.7
+X-Python3-Version: >= 3.4
 Homepage: https://github.com/ChannelFinder
 Vcs-Git: https://stash.nscl.msu.edu/scm/phyapp/python-cfclient.git
 Vcs-Browser: https://stash.nscl.msu.edu/projects/PHYAPP/repos/python-cfclient
@@ -13,6 +13,17 @@ Vcs-Browser: https://stash.nscl.msu.edu/projects/PHYAPP/repos/python-cfclient
 Package: python-cfclient
 Architecture: all
 Depends: python-requests (>= 2.4), ${python:Depends}, ${misc:Depends}
-Description: Python wrapper for Channel Finder v3 REST API
+Description: Python wrapper for Channel Finder v3 REST API (Python 2)
  Python wrapper for Channel Finder v3 REST API with convenience methods
  for creating, editing and querying the Channel Finder service.
+ .
+ This package installs the library for Python 2.
+
+Package: python3-cfclient
+Architecture: all
+Depends: python3-requests (>= 2.4), ${python3:Depends}, ${misc:Depends}
+Description: Python wrapper for Channel Finder v3 REST API (Python 3)
+ Python wrapper for Channel Finder v3 REST API with convenience methods
+ for creating, editing and querying the Channel Finder service.
+ .
+ This package installs the library for Python 3.

@@ -21,7 +21,7 @@ export PYBUILD_NAME = cfclient
 
 # main packaging script based on dh7 syntax
 %:
-	dh $@ --with python2 --buildsystem=pybuild
+	dh $@ --with python2,python3 --buildsystem=pybuild
 
 # debmake generated override targets
 # This is example for Cmake (See http://bugs.debian.org/641051 )
