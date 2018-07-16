@@ -1,3 +1,16 @@
+python-cfclient (3.1.0-1) unstable; urgency=medium
+
+  * MNT: Bump up version to 3.1.0.
+  * Add method to get url of tag, property and channel.
+  * PY3: Fix import issue.
+  * PY3: Fix Python 3.x compatibilities.
+  * BLD: Fix python-all version.
+  * BLD: Fix path.
+  * BLD: Add install files.
+  * BLD: Add empty watch file.
+
+ -- Tong Zhang <zhangt@frib.msu.edu>  Mon, 16 Jul 2018 16:51:49 -0400
+
 python-cfclient (3.0.1-2) unstable; urgency=medium
 
   * BLD: Add package for Python 3.x. 
