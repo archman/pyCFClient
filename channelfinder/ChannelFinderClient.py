@@ -14,7 +14,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.poolmanager import PoolManager
 from requests import auth
 from copy import copy
-from _conf import _conf
+from ._conf import _conf
 try: 
     from json import JSONDecoder, JSONEncoder
 except ImportError: 

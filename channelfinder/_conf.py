@@ -14,10 +14,13 @@ password=MyPassword
 
 def __loadConfig():
     import os.path
-    import ConfigParser
+    try:
+        from ConfigParser import SafeConfigParser
+    except:
+        from configparser import ConfigParser as SafeConfigParser
     dflt={'BaseURL':'http://localhost:8080/ChannelFinder'
         }
-    cf=ConfigParser.SafeConfigParser(defaults=dflt)
+    cf=SafeConfigParser(defaults=dflt)
 #    print os.path.normpath(os.path.expanduser('~/channelfinderapi.conf'))
     cf.read([
         '/etc/channelfinderapi.conf',
