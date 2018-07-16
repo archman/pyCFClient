@@ -1,3 +1,9 @@
+python-cfclient (3.0.1-2) unstable; urgency=medium
+
+  * BLD: Add package for Python 3.x. 
+
+ -- Tong Zhang <zhangt@frib.msu.edu>  Mon, 16 Jul 2018 15:24:43 -0400
+
 python-cfclient (3.0.1-1) unstable; urgency=medium
 
   * Add size and ifrom keyword arguments for 'find'
