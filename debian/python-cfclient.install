@@ -1,0 +1,4 @@
+python-cfclient/usr/bin/* usr/bin/
+python-cfclient/usr/lib/python2.7/dist-packages usr/lib/python2.7
+python-cfclient/usr/lib/python2.7/dist-packages/channelfinder usr/lib/python2.7/dist-packages
+

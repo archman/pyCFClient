@@ -2,7 +2,7 @@ Source: python-cfclient
 Section: python
 Priority: optional
 Maintainer: Dylan Maxwell <maxwelld@frib.msu.edu>
-Build-Depends: debhelper (>= 9),dh-python,python-all,python3-all,python-setuptools,python3-setuptools
+Build-Depends: debhelper (>= 9),dh-exec,dh-python,python-all,python3-all,python-setuptools,python3-setuptools
 Standards-Version: 3.9.6
 X-Python-Version: >= 2.7
 X-Python3-Version: >= 3.4
