@@ -1,7 +1,7 @@
 #!/usr/bin/dh-exec
 
-python-cfclient/usr/bin/cf-monitor-test => usr/bin/cf-monitor-test3
-python-cfclient/usr/bin/cf-update-ioc => usr/bin/cf-update-ioc3
-python-cfclient/usr/lib/python2.7/dist-packages usr/lib/python2.7
-python-cfclient/usr/lib/python2.7/dist-packages/channelfinder usr/lib/python2.7/dist-packages
+python3-cfclient/usr/bin/cf-monitor-test => usr/bin/cf-monitor-test3
+python3-cfclient/usr/bin/cf-update-ioc => usr/bin/cf-update-ioc3
+python3-cfclient/usr/lib/python3.4/dist-packages usr/lib/python3
+python3-cfclient/usr/lib/python3.4/dist-packages/channelfinder usr/lib/python3/dist-packages
 
