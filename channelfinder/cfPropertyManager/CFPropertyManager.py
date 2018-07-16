@@ -57,9 +57,9 @@ def readConfiguration(path):
     global cfglines, expression_list, exclusion_expression
     cfglines = [line.strip().split("=",1) for line in open(path)]
     for properties in cfglines:
-        if(verbose): print properties[0] + " = " + properties[1]
+        if(verbose): print(properties[0] + " = " + properties[1])
         if properties[0] == "IGNORE":
-            print "IGNORE "+properties[1]
+            print("IGNORE "+properties[1])
             exclusion_expression = re.compile(properties[1])
         else:
             if client.findProperty(properties[0]) != None:
@@ -67,8 +67,8 @@ def readConfiguration(path):
                     expression = re.compile(properties[1])
                     expression_list.append([expression, properties[0]])
                 except Exception as e:
-                    print 'Failed to find the property',properties[0]
-                    print 'CAUSE:',e.message
+                    print('Failed to find the property',properties[0])
+                    print('CAUSE:',e.message)
     return cfglines
 
 
@@ -89,7 +89,7 @@ def applyExpression():
     for channel_name in dbllines:
         prop_list = []
         if(exclusion_expression.search(channel_name)!=None):
-            if verbose: print "EXCLUDE: "+channel_name
+            if verbose: print("EXCLUDE: "+channel_name)
         else:
 
                 for expression in expression_list:
@@ -98,23 +98,23 @@ def applyExpression():
 
                     if result != None:
                         value = clean(result.group())
-                        if(verbose):  print  "FOUND: "+value +" in "+ channel_name
+                        if(verbose):  print("FOUND: "+value +" in "+ channel_name)
                         if value != "":
                             prop_list.append({u'name' : expression[1], u'owner' : username, u'value' : value})
                         else:
-                            if(verbose): print "MISSING " + expression[1] + "IN " + channel_name
-                if verbose: print "UPDATE "+channel_name
+                            if(verbose): print("MISSING " + expression[1] + "IN " + channel_name)
+                if verbose: print("UPDATE "+channel_name)
                 try:
                     client.update(channel = {u'name' : channel_name, u'owner':username,u'properties':prop_list })
                 except Exception as e:
-                    print 'Failed to update: '+channel_name+" \n--Cause:"+ e.message
+                    print('Failed to update: '+channel_name+" \n--Cause:"+ e.message)
 
 
 def updateProperty(result, property_name,channel_name):
     '''
     Creates or updates properties defined in configuration file for any channel object passed.
     '''
-    if(verbose): print "ADD "+result+" TO "+property_name+ " IN " +channel_name
+    if(verbose): print("ADD "+result+" TO "+property_name+ " IN " +channel_name)
     client.set(property={u'name':property_name, u'owner' : username, u'value':result},channelName=channel_name)
 
 
@@ -123,7 +123,7 @@ def addChannel(result, property_name, channel_name):
     Presently not used method for building a list of channels to be batch-updated.
     '''
     global channel_list
-    if (verbose):print "ADD "+result+" TO "+property_name+ " IN " +channel_name
+    if (verbose):print("ADD "+result+" TO "+property_name+ " IN " +channel_name)
     #channel_list.append(Channel(name=channel_name, owner=username,properties=[Property(property_name,username,result)]))
     #ch = Channel(name=channel_name, owner=username,properties=[Property(property_name,username,result)])
     #client.update(channel = ch)
@@ -204,7 +204,7 @@ def run(dbl_path,cfg_path):
     Core functionality sequence.
     '''
     global DBL_PATH, CFG_PATH
-    if (verbose): print dbl_path, cfg_path
+    if (verbose): print(dbl_path, cfg_path)
     DBL_PATH=dbl_path
     CFG_PATH=cfg_path
 
@@ -220,7 +220,7 @@ if __name__ == "__main__":
     try:
         main()
     except IOError as e:
-        print "IOError: " + e.message
+        print("IOError: " + e.message)
     else:
         startClient()
 

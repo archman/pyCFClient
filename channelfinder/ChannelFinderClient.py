@@ -14,7 +14,7 @@ from requests.adapters import HTTPAdapter
 from requests.packages.urllib3.poolmanager import PoolManager
 from requests import auth
 from copy import copy
-from _conf import _conf
+from ._conf import _conf
 try: 
     from json import JSONDecoder, JSONEncoder
 except ImportError: 
@@ -53,7 +53,7 @@ class ChannelFinderClient(object):
             #self.__session.get(self.__baseURL, verify=False, headers=copy(self.__jsonheader)).raise_for_status()
  
         except:
-            raise Exception, 'Failed to create client to ' + self.__baseURL
+            raise Exception('Failed to create client to ' + self.__baseURL)
     
     @property
     def url(self):
@@ -147,7 +147,7 @@ class ChannelFinderClient(object):
         elif len(kwds) == 2:
             self.__handleMultipleAddParameters(**kwds)
         else:
-            raise Exception, 'incorrect usage: '
+            raise Exception('incorrect usage: ')
     
     def __handleSingleAddParameter(self, **kwds):
         if 'channel' in kwds :
@@ -195,7 +195,7 @@ class ChannelFinderClient(object):
                               auth=self.__auth)
             r.raise_for_status()
         else:
-            raise Exception, 'Incorrect Usage: unknown key'
+            raise Exception('Incorrect Usage: unknown key')
 
     def __handleMultipleAddParameters(self, **kwds):
         # set a tag to a channel
@@ -228,7 +228,7 @@ class ChannelFinderClient(object):
                          verify=False,
                          auth=self.__auth).raise_for_status()
         else:
-            raise Exception, 'Incorrect Usage: unknown keys'
+            raise Exception('Incorrect Usage: unknown keys')
 
     def __checkResponseState(self, r):
         '''
@@ -237,8 +237,9 @@ class ChannelFinderClient(object):
         if not int(r[u'headers']['status']) <= 206:
             match = re.search(r'<b>description</b>([\S\s]*?)</p>', r[u'body'])
             msg = match.group(1)
-            raise Exception, 'HTTP Error status: ' + r[u'headers']['status'] + \
-                ' Cause: ' + msg
+            raise Exception(
+                    'HTTP Error status: ' 
+                  + r[u'headers']['status'] + ' Cause: ' + msg)
         return r
 
     def find(self, **kwds):
@@ -294,9 +295,9 @@ class ChannelFinderClient(object):
         To query for the existance of a tag or property use findTag and findProperty.
         '''
         if not self.__baseURL:
-            raise Exception, 'Connection not created'
+            raise Exception('Connection not created')
         if not len(kwds) > 0:
-            raise Exception, 'Incorrect usage: atleast one parameter must be specified'
+            raise Exception('Incorrect usage: atleast one parameter must be specified')
         args = []
         for key in kwds:
             if key == 'name':
@@ -317,7 +318,7 @@ class ChannelFinderClient(object):
             elif key == 'ifrom':
                 args.append(('~from', '{0:d}'.format(int(kwds[key]))))
             else:
-                raise Exception, 'unknown find argument ' + key
+                raise Exception('unknown find argument ' + key)
         return self.findByArgs(args)
 
     def findByArgs(self, args):
@@ -434,7 +435,7 @@ class ChannelFinderClient(object):
         elif len(kwds) == 2:
             self.__handleMultipleDeleteParameters(**kwds)
         else:
-            raise Exception, 'incorrect usage: Delete a single Channel/tag/property'
+            raise Exception('incorrect usage: Delete a single Channel/tag/property')
 
     def __handleSingleDeleteParameter(self, **kwds):
         if 'channelName' in kwds:
@@ -459,7 +460,7 @@ class ChannelFinderClient(object):
                             auth=self.__auth).raise_for_status()
             pass
         else:
-            raise Exception, ' unkown key use channelName, tagName or proprtyName'
+            raise Exception(' unkown key use channelName, tagName or proprtyName')
 
     def __handleMultipleDeleteParameters(self, **kwds):
         if 'tag' in kwds and 'channelName' in kwds:
@@ -484,7 +485,7 @@ class ChannelFinderClient(object):
             channels = [channel for channel in channelsWithProp if channel[u'name'] not in kwds['channelNames']]
             self.set(property=kwds['property'], channels=channels)
         else:
-            raise Exception, ' unkown keys'
+            raise Exception(' unkown keys')
 
 #===============================================================================
 # Update methods
@@ -544,13 +545,13 @@ class ChannelFinderClient(object):
         '''
 
         if not self.__baseURL:
-            raise Exception, 'Olog client not configured correctly'
+            raise Exception('Olog client not configured correctly')
         if len(kwds) == 1:
             self.__handleSingleUpdateParameter(**kwds)
         elif len(kwds) == 2:
             self.__handleMultipleUpdateParameters(**kwds)
         else:
-            raise Exception, 'incorrect usage: '
+            raise Exception('incorrect usage: ')
 
     def __handleSingleUpdateParameter(self, **kwds):
         if 'channel' in kwds:
@@ -585,7 +586,7 @@ class ChannelFinderClient(object):
                           auth=self.__auth)
             r.raise_for_status()
         else:
-            raise Exception, ' unkown key '
+            raise Exception(' unkown key ')
 
     def __handleMultipleUpdateParameters(self, **kwds):
         if 'tag' in kwds and 'channelName' in kwds:
@@ -661,7 +662,7 @@ class ChannelFinderClient(object):
                           verify=False,
                           auth=self.__auth).raise_for_status()
         else:
-            raise Exception, ' unknown keys'
+            raise Exception(' unknown keys')
 
 
 class Ssl3HttpAdapter(HTTPAdapter):
