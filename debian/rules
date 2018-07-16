@@ -1,0 +1,12 @@
+#!/usr/bin/make -f
+# See debhelper(7) (uncomment to enable)
+# output every command that modifies files on the build system.
+#DH_VERBOSE = 1
+
+
+export PYBUILD_NAME=cfclient
+export PYBUILD_DESTDIR_python2=debian/tmp/python-${PYBUILD_NAME}
+export PYBUILD_DESTDIR_python3=debian/tmp/python3-${PYBUILD_NAME}
+
+%:
+	dh $@ --with python2,python3 --buildsystem=pybuild

@@ -36,4 +36,5 @@ def __loadConfig():
         'channelfinderapi.conf'
     ])
     return cf
+
 _testConf=__loadConfig()

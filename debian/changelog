@@ -1,0 +1,48 @@
+python-cfclient (3.0.1-2) unstable; urgency=medium
+
+  * BLD: Add package for Python 3.x. 
+
+ -- Tong Zhang <zhangt@frib.msu.edu>  Mon, 16 Jul 2018 15:24:43 -0400
+
+python-cfclient (3.0.1-1) unstable; urgency=medium
+
+  * Add size and ifrom keyword arguments for 'find'
+  * Fix typo and documentation
+  * Add methods to handle url properties.
+
+ -- Tong Zhang <zhangt@frib.msu.edu>  Fri, 08 Sep 2017 14:49:01 -0400
+
+python-cfclient (3.0.0~frib1-1) unstable; urgency=medium
+
+  * Improved Python docstrings
+  * Fix broken parts of API
+  * Update to commit 85d2bad
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Wed, 26 Oct 2016 16:07:08 -0400
+
+python-cfclient (2.0.0-4) unstable; urgency=medium
+
+  * Testing Jenkins build system.
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Thu, 6 Oct 2016 15:03:02 -0700
+
+python-cfclient (2.0.0-3) unstable; urgency=medium
+
+  * Patch hard-coded base URL with class variable.
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Thu, 12 May 2016 14:05:02 -0700
+
+python-cfclient (2.0.0-2) unstable; urgency=medium
+
+  * Patch hard-coded base URL withwq construction parameter.
+  * Patch to use version of urllib3 included with Requests.
+  * Patch to replace ssl.PROTOCOL_vSSLv3 with ssl.PROTOCOL_vSSLv23.
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Thu, 12 May 2016 10:16:47 -0700
+
+python-cfclient (2.0.0-1) unstable; urgency=low
+
+  * Initial release with source from Github:
+    https://github.com/ChannelFinder/pyCFClient/archive/89f5639335aa7ebcb910289e1f74089857180d62.tar.gz
+
+ -- Dylan Maxwell <maxwelld@frib.msu.edu>  Fri, 29 Apr 2016 12:36:05 -0700
