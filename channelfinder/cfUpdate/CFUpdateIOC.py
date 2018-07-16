@@ -65,12 +65,12 @@ def updateChannelFinder(pvNames, hostName, iocName, time, owner,
     password = channelfinder password
     '''
     if hostName == None or iocName == None:
-        raise Exception, 'missing hostName or iocName'
+        raise Exception('missing hostName or iocName')
     channels = []
     try:
         client = ChannelFinderClient(BaseURL=service, username=username, password=password)
     except:
-        raise Exception, 'Unable to create a valid webResourceClient'
+        raise Exception('Unable to create a valid webResourceClient')
     checkPropertiesExist(client, owner)
     previousChannelsList = client.findByArgs([(u'hostName', hostName), (u'iocName', iocName)])
     if previousChannelsList != None:
@@ -162,8 +162,8 @@ def checkPropertiesExist(client, propOwner):
             try:
                 client.set(property={u'name' : propName, u'owner' : propOwner})
             except Exception as e:
-                print 'Failed to create the property',propName
-                print 'CAUSE:',e.message
+                print('Failed to create the property',propName)
+                print('CAUSE:',e.message)
 
 def ifNoneReturnDefault(object, default):
     '''
