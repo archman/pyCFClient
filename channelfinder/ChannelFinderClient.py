@@ -665,7 +665,6 @@ class ChannelFinderClient(object):
             raise Exception(' unknown keys')
 
 
-
 class Ssl3HttpAdapter(HTTPAdapter):
     """"Transport adapter" that allows us to use SSLv3."""
 
